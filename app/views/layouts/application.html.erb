@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog do Marcos</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+  <div class="bg-danger text-white mb-4 p-4">
+      <%= link_to root_path, class: 'text-white' do %>
+        blog do Marcos silva
+      <% end %>
+  </div>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
