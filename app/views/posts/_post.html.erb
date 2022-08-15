@@ -1,1 +1,12 @@
-<%= post.title %>
+<div class="card bg-light mb-2">
+    <div class="card-body">
+        <h4><%= link_to post.title, post_path(post) %></h4>
+
+    <div class="text-muted mb-2">
+        <em>Por <%= post.author %> (<%= l post.created_at, format: :short%>)</em>
+    </div>
+
+    <p><%= post.body %></p>
+
+    </div>
+</div>
