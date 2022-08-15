@@ -9,13 +9,22 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
-  <div class="bg-danger text-white mb-4 p-4">
+  <body>
+  <div class="bg-primary text-white text-center mb-4 p-4">
       <%= link_to root_path, class: 'text-white' do %>
-        blog do Marcos silva
+        <h1 class='display-5'>Blog do Marcos Silva</h1>
       <% end %>
+
+      <p class="lead">Olá, aqui você encontrará artigos sobre programação, tecnologia e carreira.</p>
   </div>
 
-  <body>
+  <div class="container">
     <%= yield %>
+  </div>
+
+  <footer class="bg-primary text-white text-center mt-5 p-4">
+    Copyright © Marcos Silva <%= Date.current.year =%>.
+  </footer>
+
   </body>
 </html>
