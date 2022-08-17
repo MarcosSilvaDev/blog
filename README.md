@@ -1,4 +1,4 @@
-# Blog simple Ruby on Rails
+# Blog simple with  Ruby on Rails
 
 ## Technologies used
 
