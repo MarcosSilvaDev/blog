@@ -24,21 +24,44 @@
       </h4>
     </div>
 
-    <%= form_with model: @comment, local: true do |form| %>
-      <%= form.hidden_field :post_id, value: @post.id %>
+    <div class="shadow-sm m-3 p-3 bg-light rounded">
 
-      <div class="form-group mb-4">
-        <%= form.label :author, class: 'mb-1' %>
-        <%= form.text_field :author, class: 'form-control' %>
+      <%= form_with model: @comment, local: true do |form| %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+
+        <div class="form-group mb-4">
+          <%= form.label :author, class: 'mb-1' %>
+          <%= form.text_field :author, class: 'form-control' %>
+        </div>
+
+        <div class="form-group mb-4">
+          <%= form.label :body, class: 'mb-1' %>
+          <%= form.text_area :body, class: 'form-control' %>
+        </div>
+
+        <%= form.submit  'Enviar', class: 'btn btn-primary',
+        data: { disable_width: 'Enviando...' } %>
+        <% end %>
+    </div>
+
+    <% @comments.each do |comment| %>
+      <div class="shadow-sm m-3 p-3 bg-light rounded">
+        <div class="row">
+          <div class="col">
+            <strong><%= comment.author %></strong>
+          </div>
+
+          <div class="col text-end">
+            <em data-bs-toggle="tooltip" data-bs-placement="top" title="<%= l comment.created_at, format: :short %>">
+              <%= time_ago_in_words comment.created_at %> atrás
+            </em>
+            </button>
+          </div>
+        </div>
+
+          <%= sanitize(comment.body.gsub("\n", "<br>")).html_safe %>
+
       </div>
-
-      <div class="form-group mb-4">
-        <%= form.label :body, class: 'mb-1' %>
-        <%= form.text_area :body, class: 'form-control' %>
-      </div>
-
-      <%= form.submit  'Enviar', class: 'btn btn-primary',
-      data: { disable_width: 'Enviando...' } %>
-      <% end %>
+    <% end %>
   </div>
 
