@@ -31,12 +31,12 @@
 
         <div class="form-group mb-4">
           <%= form.label :author, class: 'mb-1' %>
-          <%= form.text_field :author, class: 'form-control' %>
+          <%= form.text_field :author, class: 'form-control', required: true %>
         </div>
 
         <div class="form-group mb-4">
           <%= form.label :body, class: 'mb-1' %>
-          <%= form.text_area :body, class: 'form-control' %>
+          <%= form.text_area :body, class: 'form-control', required: true %>
         </div>
 
         <%= form.submit  'Enviar', class: 'btn btn-primary',
